@@ -4,15 +4,18 @@ import com.fei.dao.UserDao;
 import com.fei.dao.impl.UserDaoImpl;
 import com.fei.pojo.user;
 import com.fei.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.stream.Collectors;
 
-
+@Component
 public class UserServiceImpl implements UserService {
-    private UserDao userDao = new UserDaoImpl();
+    @Autowired//程序运行时会自动查找该类型的bean对象并赋值给成员变量
+    private UserDao userDao;
     @Override
     public List<user> findAll() {
         //1.调用dao拿到数据

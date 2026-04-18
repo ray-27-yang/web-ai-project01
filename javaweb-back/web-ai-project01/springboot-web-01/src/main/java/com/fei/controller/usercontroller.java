@@ -3,6 +3,8 @@ package com.fei.controller;
 import com.fei.pojo.user;
 import com.fei.service.UserService;
 import com.fei.service.impl.UserServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
@@ -45,12 +47,25 @@ import java.util.List;
 
 @RestController//@ResponseBody
 public class usercontroller {
-    private UserService userService = new UserServiceImpl();
+    //方法一：属性注入
+    @Autowired
+    private UserService userService;
+//    方法二：构造函数注入
+//    private final UserService userService;
+//    @Autowired
+//    public usercontroller(UserService userService) {
+//        this.userService = userService;
+//    }
+//    方法三：setter注入
+//    private UserService userService;
+//    @Autowired
+//    public void setUserService(UserService userService) {
+//        this.userService = userService;
+//    }
 
     @RequestMapping("/list")
     public List<user> list() throws Exception {
         List<user> userList = userService.findAll();
         return userList;
-
     }
 }
