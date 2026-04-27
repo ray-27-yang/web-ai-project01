@@ -10,17 +10,29 @@
         <module name="maven-project01" />
         <module name="spring-web-quickstart" />
         <module name="maven-project02" />
+        <module name="homeworkday04" />
         <module name="maven-project03" />
+        <module name="jdbc-demo" />
       </profile>
-      <profile name="Annotation profile for homeworkday03" enabled="true">
+      <profile name="Annotation profile for springboot-web-01" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$PROJECT_DIR$/../../Java/apache-maven-3.9.4-bin/apache-maven-3.9.4/mvn_repo/org/projectlombok/lombok/1.18.44/lombok-1.18.44.jar" />
+          <entry name="$PROJECT_DIR$/../../Java/apache-maven-3.9.4-bin/apache-maven-3.9.4/mvn_repo/org/projectlombok/lombok/1.18.44/lombok-1.18.44.jar" />
         </processorPath>
         <module name="springboot-web-01" />
         <module name="homeworkday03" />
+      </profile>
+      <profile name="Annotation profile for springboot-mybatis-quickstart" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$PROJECT_DIR$/../../Java/apache-maven-3.9.4-bin/apache-maven-3.9.4/mvn_repo/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
+        </processorPath>
+        <module name="springboot-mybatis-quickstart" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="21" />
@@ -28,7 +40,9 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="homeworkday03" options="-parameters" />
+      <module name="homeworkday04" options="-parameters" />
       <module name="spring-web-quickstart" options="-parameters" />
+      <module name="springboot-mybatis-quickstart" options="-parameters" />
       <module name="springboot-web-01" options="-parameters" />
     </option>
   </component>
